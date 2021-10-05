@@ -16,8 +16,6 @@ public class Lab01_Q3 {
         System.out.println("Turkey has " + ((((totalEarthSurfaceArea*areaOfTurkey*turkeyDryLand)/10000) / (totalEarthSurfaceArea*land)/100)/100) + " percent of the Earth's dry land.");        //Third expression
 
         System.out.println("Turkey has " + ((((totalEarthSurfaceArea*areaOfTurkey*turkeyWetLand)/10000) / (totalEarthSurfaceArea*water)/100)/100) + " percent of the Earth's wet land.");       //Fourth expression
-
-        System.out.println("breakpoint control");
                                  
     }
     
