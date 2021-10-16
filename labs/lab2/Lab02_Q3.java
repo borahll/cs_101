@@ -23,7 +23,7 @@ public class Lab02_Q3 {
 
         System.out.println("Remove leading and trailing blank charecters:" + title.trim());
 
-//      char char_At = sc.next().charAt(0);
+//      char char_At_User = sc.next().charAt(0);
 
         System.out.println("Charecter at index position 5:" + title.charAt(5));
 
