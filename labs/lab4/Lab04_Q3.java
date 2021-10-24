@@ -12,14 +12,16 @@ public class Lab04_Q3 {
         short max = 0;
         short min = 0;
         float average = 0;
+        byte n = 0;
        
         System.out.printf("Now input %d positive integers:\n" , inputN);
 
-        for (byte n = 0; n<=inputN-1 ; n++)
+        while ( n<=inputN-1)
         {
             short in = sc.nextShort();
             sum = sum + in;
             average = sum/inputN;
+            n++;
 
             if (in>max)
             {

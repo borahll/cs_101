@@ -14,11 +14,13 @@ public class Lab04_Q2 {
     int user_Palindrome_Lenght = user_Palindrome.length();
     String reverse = "";
     String palindrome_TF = "";
+    int i = user_Palindrome_Lenght-1 ;
 
 
-    for(int i = user_Palindrome_Lenght-1 ; i >= 0 ; i--)
+    while( i >= 0 )
     {
         reverse = reverse + user_Palindrome.charAt(i);
+        i--;  
     }
 
 

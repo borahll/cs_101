@@ -9,11 +9,13 @@ public class Lab04_Q4 {
         System.out.print("Enter number of lines:");
         short numberOfLines =sc.nextShort();
         String out = "";
+        int n = 0;
 
-        for(int n = 0; n<=numberOfLines-1 ; n++)
+        while( n<=numberOfLines-1)
         {
             out = out + "*";
             System.out.println(out);
+            n++;
         }
         sc.close();
     }
