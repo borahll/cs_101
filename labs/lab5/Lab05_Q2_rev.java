@@ -113,36 +113,41 @@ public class Lab05_Q2_rev {
             System.out.println("please enter your choice:\n" + "1)Hit\n" + "2)Stand\n" + "your choice:");
             choiceDecision = sc.next();
 
-            if(choiceDecision.equals("1"))
-            {
-                int randomChoice3 = rand.nextInt(1, 10);
-                char randomChoice3Char = Integer.toString(randomChoice3).charAt(0);
-                int randomChoice3Index = deck.indexOf(randomChoice3Char);
-                if (randomChoice3Index == 0)
+                if(choiceDecision.equals("1"))
                 {
-                    newDeck = deck.substring(1,deck.length());
-                    deck = newDeck;
-                }
-                else 
-                {
-                    newDeck = deck.substring(0,randomChoice3Index-1) + deck.substring(randomChoice3Index+1, deck.length());
-                    deck = newDeck;
-                }
-                playerSum = playerSum + randomChoice3;
-                playerHand = playerHand + randomChoice3;
+                    int randomChoice3 = rand.nextInt(1, 10);
+                    char randomChoice3Char = Integer.toString(randomChoice3).charAt(0);
+                    int randomChoice3Index = deck.indexOf(randomChoice3Char);
+                    if (randomChoice3Index == 0)
+                    {
+                        newDeck = deck.substring(1,deck.length());
+                        deck = newDeck;
+                    }
+                    else 
+                    {
+                        newDeck = deck.substring(0,randomChoice3Index-1) + deck.substring(randomChoice3Index+1, deck.length());
+                        deck = newDeck;
+                    }
+                    playerSum = playerSum + randomChoice3;
+                    playerHand = playerHand + randomChoice3;
 
-                System.out.println("Hit! Dealers giving the player a card\n" + "players hand:\n" + playerHand);
+                    System.out.println("Hit! Dealers giving the player a card\n" + "players hand:\n" + playerHand);
 
-                if(playerSum == 21 )
-                {
-        
-                    System.out.println("player wins");
-        
-                }
-                if(playerSum>21)
-                {
-                    System.out.println("dealer won");                }
-            }          
+                    if(playerSum == 21 )
+                    {
+            
+                        System.out.println("player wins");
+                        System.out.println(deck);        
+                        System.exit(0);
+            
+                    }
+                    if(playerSum>21)
+                    {
+                        System.out.println("dealer won"); 
+                        System.out.println(deck);         
+                        System.exit(0);              
+                    }
+                }          
         }
         while(choiceDecision.equals("1"));
 
@@ -174,10 +179,14 @@ public class Lab05_Q2_rev {
                     {
             
                         System.out.println("dealer wins");
+                        System.out.println(deck);        
+                        System.exit(0);
                     }
                     if(dealerSum>21)
                     {
                         System.out.println("Player won");
+                        System.out.println(deck);        
+                        System.exit(0);
                     }
                 }
                 while(dealerSum<playerSum);

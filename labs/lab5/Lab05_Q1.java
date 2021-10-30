@@ -8,20 +8,45 @@
 
             System.out.print("Please enter city plan string:");
             String cityPlan = sc.next();
-//            Integer cityPlanInt = Integer.valueOf(cityPlan);
-            String replayTimeConvert = "" + cityPlan.charAt(0);
-            Integer replayTime = Integer.parseInt(replayTimeConvert);
-            String star = "";
+//            Integer cityPlanInteger = Integer.parseInt(cityPlan);
+            int cityPlanLenght = cityPlan.length();
+            int max = 0;
+            int min = Integer.MAX_VALUE;
+//            int minKill = min;
 
-            for(short i = 0; i<= cityPlan.length(); i++)
+            for(byte a = 0; a<=cityPlanLenght-1;a++)
             {
-                for(short a = 0; a <= replayTime-1 ; a++)
+                if(Integer.parseInt(String.valueOf(cityPlan.charAt(a)))>max)
                 {
-                    star = star + "*";
-                    System.out.println(star);
+                    max = Integer.parseInt(String.valueOf(cityPlan.charAt(a)));
+                }
+                else if(Integer.parseInt(String.valueOf(cityPlan.charAt(a)))<min)
+                {
+                    min = Integer.parseInt(String.valueOf(cityPlan.charAt(a))); 
                 }
             }
+//            String maxString = Integer.toString(max);
+            int maxKill = max;
 
+            for (byte c = 0;c<=maxKill-1; c++)
+            {
+                for(byte b = 0;b<=cityPlanLenght-1;b++)
+                {
+                    int value = Integer.parseInt(String.valueOf(cityPlan.charAt(b)));
+                    String valueString = Integer.toString(value);
+                    if(value >= max)
+                    {
+                        System.out.print("*");
+                    }
+                    else 
+                    {
+                        System.out.print(" ");
+                    }
+                }
+                System.out.println();
+                max--;
+//                maxString = Integer.toString(max);
+            }
             sc.close();
         }
     }
