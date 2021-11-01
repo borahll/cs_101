@@ -4,6 +4,8 @@
  * 
  * @author Ugur Dogrusoz
  */
+package lab1;
+
 public class Lab01_Q1
 {      
    public static void main( String args[])  
