@@ -13,13 +13,15 @@ public class Lab05_Q2_re {
 
         String playerHand = "";
         String dealerHand = "";
-        byte starting = 1;
-        String deck = "";
-        int randomChoicePlayer2 = 0;
-        int randomChoiceDealer2 = 0;
+        int randomChoicePlayer = 0;
+        int randomChoiceDealer = 0;
         String choiceDecision;
         int playerSum = 0;
         int dealerSum = 0;
+
+        byte starting = 1;
+        String deck = "";
+
 
         for(byte a=0;a<9;a++)
         {
@@ -31,48 +33,42 @@ public class Lab05_Q2_re {
             starting++;
         }
 
+
         for(byte x=0;x<=1;x++)
         {
-             randomChoicePlayer2 = rand.nextInt(Integer.parseInt(String.valueOf(deck.charAt(0))),Integer.parseInt(String.valueOf(deck.charAt(deck.length()-1))));
-             playerHand = playerHand + Integer.toString(randomChoicePlayer2);
+             randomChoicePlayer = rand.nextInt(0,deck.length());
+             playerHand = playerHand + String.valueOf(deck.charAt(randomChoicePlayer));
 
-             char randomChoicePlayerChar = playerHand.charAt(x);
-             int randomChoicePlayerIndex = deck.indexOf(randomChoicePlayerChar);
-             if(randomChoicePlayerIndex==0)
+             if(randomChoicePlayer==0)
                 {
                     newDeck = deck.substring(1,deck.length());
                     deck = newDeck;
                 }
             else
                 {
-                    newDeck = deck.substring(0,randomChoicePlayerIndex-1) + deck.substring(randomChoicePlayerIndex+1, deck.length());
+                    newDeck = deck.substring(0,randomChoicePlayer) + deck.substring(randomChoicePlayer+1, deck.length());
                     deck = newDeck;
                 }
 
-            playerSum = playerSum + Integer.parseInt(String.valueOf(deck.charAt(x)));
+            playerSum = playerSum + Integer.parseInt(String.valueOf(playerHand.charAt(x)));
 
         }
         for(byte x=0;x<=1;x++)
         {
-             randomChoiceDealer2 = rand.nextInt(Integer.parseInt(String.valueOf(deck.charAt(0))),Integer.parseInt(String.valueOf(deck.charAt(deck.length()-1))));
-             dealerHand = dealerHand + Integer.toString(randomChoiceDealer2);
+             randomChoiceDealer = rand.nextInt(0,deck.length());
+             dealerHand = dealerHand + String.valueOf(deck.charAt(randomChoiceDealer));
 
-             char randomChoiceDealerChar = dealerHand.charAt(x);
-             int randomChoiceDealerIndex = deck.indexOf(randomChoiceDealerChar);
-
-             if(randomChoiceDealerIndex==0)
+             if(randomChoiceDealer==0)
                 {
                     newDeck = deck.substring(1,deck.length());
                     deck = newDeck;
                 }
             else
                 {
-                    newDeck = deck.substring(0,randomChoiceDealerIndex-1) + deck.substring(randomChoiceDealerIndex+1, deck.length());
+                    newDeck = deck.substring(0,randomChoiceDealer) + deck.substring(randomChoiceDealer+1, deck.length());
                     deck = newDeck;
                 }
-
-            dealerSum = dealerSum + Integer.parseInt(String.valueOf(deck.charAt(x)));
-
+            dealerSum = dealerSum + Integer.parseInt(String.valueOf(dealerHand.charAt(x)));
         }
 
         System.out.println("");
@@ -86,21 +82,20 @@ public class Lab05_Q2_re {
 
                 if(choiceDecision.equals("1"))
                 {
-                    int randomChoice3 = rand.nextInt(Integer.parseInt(String.valueOf(deck.charAt(0))),Integer.parseInt(String.valueOf(deck.charAt(deck.length()-1))));
-                    char randomChoice3Char = Integer.toString(randomChoice3).charAt(0);
-                    int randomChoice3Index = deck.indexOf(randomChoice3Char);
-                    if (randomChoice3Index == 0)
+                    int randomChoice3 = rand.nextInt(0,deck.length());
+
+                    if (randomChoice3 == 0)
                     {
                         newDeck = deck.substring(1,deck.length());
                         deck = newDeck;
                     }
                     else 
                     {
-                        newDeck = deck.substring(0,randomChoice3Index-1) + deck.substring(randomChoice3Index+1, deck.length());
+                        newDeck = deck.substring(0,randomChoice3) + deck.substring(randomChoice3+1, deck.length());
                         deck = newDeck;
                     }
-                    playerSum = playerSum + randomChoice3;
-                    playerHand = playerHand + randomChoice3;
+                    playerSum = playerSum + Integer.parseInt(String.valueOf(deck.charAt(randomChoice3)));
+                    playerHand = playerHand + String.valueOf(deck.charAt(randomChoice3));
 
                     System.out.println("Hit! Dealers giving the player a card\n" + "players hand:\n" + playerHand);
 
@@ -124,25 +119,25 @@ public class Lab05_Q2_re {
 
         if(choiceDecision.equals("2"))
             {
+                System.out.println("player stands\nPlayers turn is over now players hand sums to" + playerHand + "\ndealers hand:\n" + dealerHand);
+
                 do
                 {
-                    System.out.println("player stands\nPlayers turn is over now players hand sums to" + playerHand);
-                    int randomChoice4 = rand.nextInt(Integer.parseInt(String.valueOf(deck.charAt(0))),Integer.parseInt(String.valueOf(deck.charAt(deck.length()-1))));
-                    char randomChoice4Char = Integer.toString(randomChoice4).charAt(0);
-                    int randomChoice4Index = deck.indexOf(randomChoice4Char);
-                    if (randomChoice4Index == 0)
+                    int randomChoice4 = rand.nextInt(0,deck.length());
+
+                    if (randomChoice4 == 0)
                     {
                         newDeck = deck.substring(1,deck.length());
                         deck = newDeck;
                     }
                     else
                     {
-                        newDeck = deck.substring(0,randomChoice4Index-1) + deck.substring(randomChoice4Index+1, deck.length());
+                        newDeck = deck.substring(0,randomChoice4) + deck.substring(randomChoice4+1, deck.length());
                         deck = newDeck;
                     }
 
-                    dealerSum = dealerSum + randomChoice4;
-                    dealerHand = dealerHand + randomChoice4;
+                    dealerSum = dealerSum + Integer.parseInt(String.valueOf(deck.charAt(randomChoice4)));
+                    dealerHand = dealerHand + String.valueOf(deck.charAt(randomChoice4));
 
                     System.out.println("Stand! Dealer is playing\n" + "dealers hand:\n" + dealerHand);
 
