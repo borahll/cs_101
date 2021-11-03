@@ -8,11 +8,9 @@
 
             System.out.print("Please enter city plan string:");
             String cityPlan = sc.next();
-//            Integer cityPlanInteger = Integer.parseInt(cityPlan);
             int cityPlanLenght = cityPlan.length();
             int max = 0;
             int min = Integer.MAX_VALUE;
-//            int minKill = min;
 
             for(byte a = 0; a<=cityPlanLenght-1;a++)
             {
@@ -25,7 +23,7 @@
                     min = Integer.parseInt(String.valueOf(cityPlan.charAt(a))); 
                 }
             }
-//            String maxString = Integer.toString(max);
+
             int maxKill = max;
 
             for (byte c = 0;c<=maxKill-1; c++)
@@ -33,7 +31,6 @@
                 for(byte b = 0;b<=cityPlanLenght-1;b++)
                 {
                     int value = Integer.parseInt(String.valueOf(cityPlan.charAt(b)));
-                    String valueString = Integer.toString(value);
                     if(value >= max)
                     {
                         System.out.print("*");
@@ -45,8 +42,8 @@
                 }
                 System.out.println();
                 max--;
-//                maxString = Integer.toString(max);
             }
+            
             sc.close();
         }
     }

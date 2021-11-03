@@ -4,7 +4,7 @@
  * 
  * @author Ugur Dogrusoz
  */
-package lab1;
+//package lab1;
 
 public class Lab01_Q1
 {      
