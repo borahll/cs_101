@@ -52,10 +52,7 @@ public class Lab06_Q5 {
             System.out.printf("%d is not a narcissistic number" , input);
 
         }
-
-
-
-
+        
         sc.close();
     }
     
