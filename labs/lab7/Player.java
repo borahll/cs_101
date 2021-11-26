@@ -10,23 +10,23 @@ public class Player {
     private String position;
     private String team;
     private int rosterNumber;
-    private boolean isActive;
+    private boolean isActive = true;
 
     private int gamesPlayed = 1;
     private double pointsPerGame = 0;
     private double assistsPerGame = 0;
     private double reboundsPerGame = 0;
     private double turnOversPerGame = 0;
+    private double efficiency; 
 
 
-    public Player(String n, String p, String t, int r, int roster){
+    public Player(String n, String p, String t, int r){
         name = n;
         position = p;
         team = t;
         rosterNumber = r;
         count++;
         allCount++;
-        rosterNumber = roster;
         id = allCount;
     }
 
@@ -50,6 +50,9 @@ public class Player {
     }
     public int getCount(){
         return count;
+    }
+    public double getEfficiency(){
+        return efficiency;
     }
     public void setName(String n){
         name = n;
@@ -85,50 +88,53 @@ public class Player {
         isActive = false;
     }
     public void transfer(String t){
-        if (team.equals(t)){System.err.println("the team u entered is the current team");}
+        if (team.equals(t)){System.out.println("the team u entered is the current team");}
         else{
             team = t;
         }
     }
-    public boolean isBeforeThan(String n){
-        if (name.compareTo(n) > 0) { return true;}
+    public boolean isBeforeThan(Player n){
+        if (name.compareTo(n.name) > 0) { return true;}
         else {return false;}
     }
 
 
     public void recordGame(int p, int a, int r, int t){
-        gamesPlayed++;
         pointsPerGame = ((pointsPerGame*(gamesPlayed-1)) + p) / gamesPlayed;
-        assistsPerGame = ((assistsPerGame*(gamesPlayed-1)) + p) / gamesPlayed;
-        reboundsPerGame = ((reboundsPerGame*(gamesPlayed-1)) + p) / gamesPlayed;
-        turnOversPerGame = ((turnOversPerGame*(gamesPlayed-1)) + p) / gamesPlayed;
+        assistsPerGame = ((assistsPerGame*(gamesPlayed-1)) + a) / gamesPlayed;
+        reboundsPerGame = ((reboundsPerGame*(gamesPlayed-1)) + r) / gamesPlayed;
+        turnOversPerGame = ((turnOversPerGame*(gamesPlayed-1)) + t) / gamesPlayed;
+        efficiency = pointsPerGame + 0.7 * assistsPerGame + 0.7 * reboundsPerGame - 0.9 * turnOversPerGame;
+        gamesPlayed++;
     }
 
-    private double efficiency = pointsPerGame + 0.7 * assistsPerGame + 0.7 * reboundsPerGame - 0.9 * turnOversPerGame;  
-    public void convertToString(){
-        System.out.println("*********************************************************** \n"+ "player Id : "+ id 
+     
+    public String toString(){
+
+        if (isActive == true)
+        {
+            System.out.println("Retirement Status : Active among " + count + " active player(s)");
+            System.out.println("***********************");
+        }
+        else 
+        {
+            System.out.println("Retirement Status : Retired among ");
+            System.out.println("***********************");
+        }
+
+        return ("****************************** \n"+ "player Id : "+ id 
         + "\n Player name:" + name 
         + "\n player position" + position
         + "\n Current team : " + team
         + "\n Jersey Number :" + rosterNumber
-        + "\n ------------------------------------------------------------------------"
+        + "\n ---------------------------------------------"
         + "\n Stats"
         + "\n PPG:" + pointsPerGame
         + "\n APG:" + assistsPerGame
         + "\n RPG:" + reboundsPerGame
         + "\n TPG:" + turnOversPerGame
         + "\n Efficiency " + efficiency
-        + "\n ------------------------------------------------------------------------");
-        if (isActive == true)
-        {
-            System.out.println("Retirement Status : Active among " + count + " active player(s)");
-            System.out.println("*****************************************************************");
-        }
-        else 
-        {
-            System.out.println("Retirement Status : Retired among ");
-            System.out.println("*****************************************************************");
-        }
+        + "\n ----------------------------------------");
     }
 
     public boolean isMoreEfficient(Player p){
