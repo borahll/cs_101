@@ -83,6 +83,13 @@ public class Player {
     public void setRosterNumber(int r){
         rosterNumber = r;
     }
+    public void register(){
+        count++;
+        allCount++;
+    }
+    public void remove(){ 
+        count--;
+    }
     public void retire(){
         count--;
         isActive = false;
@@ -118,13 +125,13 @@ public class Player {
         }
         else 
         {
-            System.out.println("Retirement Status : Retired among ");
+            System.out.println("Retirement Status : Retired  ");
             System.out.println("***********************");
         }
 
-        return ("****************************** \n"+ "player Id : "+ id 
+        return ("****************************** \n"+ " player Id : "+ id 
         + "\n Player name:" + name 
-        + "\n player position" + position
+        + "\n player position:" + position
         + "\n Current team : " + team
         + "\n Jersey Number :" + rosterNumber
         + "\n ---------------------------------------------"
