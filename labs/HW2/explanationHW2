@@ -1,0 +1,42 @@
+THE FIRST FIBONACCI METHOD('calcFibA()')
+
+The first method finds the wanted fibonacci sequance with recursion method and displays the time it found it in in nanoseconds
+The output:
+
+1  // for n= 0 , F0 is calculated in fib is done in 1562 nanoseconds
+2  // for n= 5 , F5 is calculated in fib is done in 1491 nanoseconds
+3  // for n= 10 , F10 is calculated in fib is done in 15037 nanoseconds
+4  // for n= 15 , F15 is calculated in fib is done in 153907 nanoseconds
+5  // for n= 20 , F20 is calculated in fib is done in 1719786 nanoseconds
+6  // for n= 25 , F25 is calculated in fib is done in 7425127 nanoseconds
+7  // for n= 30 , F30 is calculated in fib is done in 3706866 nanoseconds
+8  // for n= 35 , F35 is calculated in fib is done in 40359474 nanoseconds
+9  // for n= 40 , F40 is calculated in fib is done in 393669157 nanoseconds
+10  // for n= 45 , F45 is calculated in fib is done in 4281002824 nanoseconds
+11  // for n= 50 , F50 is calculated in fib is done in 47682716007 nanoseconds
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+THE SECOND FIBONACCI METHOD('calcFibB()')
+
+the second method finds the fibonacci number with a mathematical way (adding up the previous and and the current value to find the following fibonacci number)
+this method has proved to be much more efficient than the other method
+The output:
+
+0  // for n= 0 , F0 is calculated in fib is done in 22880 nanoseconds
+1  // for n= 5 , F5 is calculated in fib is done in 705 nanoseconds
+2  // for n= 10 , F10 is calculated in fib is done in 585 nanoseconds
+3  // for n= 15 , F15 is calculated in fib is done in 666 nanoseconds
+4  // for n= 20 , F20 is calculated in fib is done in 643 nanoseconds
+5  // for n= 25 , F25 is calculated in fib is done in 733 nanoseconds
+6  // for n= 30 , F30 is calculated in fib is done in 13201 nanoseconds
+7  // for n= 35 , F35 is calculated in fib is done in 865 nanoseconds
+8  // for n= 40 , F40 is calculated in fib is done in 881 nanoseconds
+9  // for n= 45 , F45 is calculated in fib is done in 964 nanoseconds
+10  // for n= 50 , F50 is calculated in fib is done in 1032 nanoseconds
+
+
+
+
+
