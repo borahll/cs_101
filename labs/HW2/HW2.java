@@ -31,16 +31,16 @@ public class HW2{
         int input = 50;
         int n = 0;
         int x = 1;
-        // while (n <= input)
-        // {
-        //     long begin = System.nanoTime();
-        //     calcFibA(n);
-        //     long end = System.nanoTime();
-        //     long interval = end - begin;
-        //     System.out.println(x  + "   a" + x  + "  // for n= " + n + " , F_" + n +" is calculated in " + interval + " nanoseconds");
-        //     n += 5;
-        //     x++;
-        // }
+        while (n <= input)
+        {
+            long begin = System.nanoTime();
+            calcFibA(n);
+            long end = System.nanoTime();
+            long interval = end - begin;
+            System.out.println(x  + "   a" + x  + "  // for n= " + n + " , F_" + n +" is calculated in " + interval + " nanoseconds");
+            n += 5;
+            x++;
+        }
 
         n = 0;
         x = 1;

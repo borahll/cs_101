@@ -19,7 +19,7 @@ public class FoodBasket {
         Food food2 = new Food("Ezogelin Soup", "red lentils", 187, "soup", 20); // Food(name, ingredients, calories, type, price)
         Food food3 = new Food("Cheesecake", "sugar, cream cheese, eggs", 500, "dessert", 60);
         Food food4 = new Food("Cheesecake", "sugar, cream cheese, eggs", 400, "dessert", 50);
-        Food food5 = new Food("Menemen", "eggs, tomatoes, onions", 100, "starter", 30);
+        // Food food5 = new Food("Menemen", "eggs, tomatoes, onions", 100, "starter", 30);
 
         // Users
         User u1, u2, u3, u4;
@@ -31,8 +31,8 @@ public class FoodBasket {
         // Orders
         Order order1 = new Order(1, "Pizza", 50);  // Order(portion, orderedFood)
         Order order2 = new Order(4, food1);
-        Order order3 = new Order(1, "Doner", 60);
-        Order order4 = new Order(4, "Iskender", 70);
+        // Order order3 = new Order(1, "Doner", 60);
+        // Order order4 = new Order(4, "Iskender", 70);
 
         // -----------------------------------------------------------------------------------------------------------------------
         // User tests
