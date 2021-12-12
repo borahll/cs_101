@@ -28,14 +28,10 @@ public class Song implements Comparable<Song>{
     public void setDuration(int d){duration = d;}
     public void setTimesPlayed(int t){timesPlayed = t;}
 
-    public int compareTo(Song aSong){
-        if (this.getDuration() > aSong.getDuration()){return 1;}
-        else if (this.getDuration() == aSong.getDuration()){return 0;}
-        else{return -1;}
-    }
+    public int compareTo(Song aSong){return this.getDuration()-aSong.getDuration();}
 
     public String toString(){
-        String s1 = "************************************************* \n Song name:" + getTitle() + "\n Artist name" + getArtist() + "\n Album name :" + getAlbum() + "\n Duration:" + getDuration() + "\n Times played" + getTimesPlayed();
+        String s1 = "\n************************************************* \n Song name:" + getTitle() + "\n Artist name:" + getArtist() + "\n Album name :" + getAlbum() + "\n Duration:" + getDuration() + "\n Times played:" + getTimesPlayed();
         return s1;
     }
 }

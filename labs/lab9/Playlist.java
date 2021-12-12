@@ -46,7 +46,7 @@ public class Playlist {
     public String toString(){
         String s2 = "";
         for(byte a = 0;a<songs.size(); a++){
-            s2 = "\n--------------------------------------------------------" + "\nSong Name" + songs.get(a).getTitle() + "\nArtist NAme:" + songs.get(a).getArtist() + "\nAlbum name:" + songs.get(a).getAlbum() + "\nDuration:" + songs.get(a).getDuration() + "\nTimes Played:" + songs.get(a).getTimesPlayed() + "\n--------------------------------------------------------";
+            s2 += "\n--------------------------------------------------------" + songs.get(a).toString() + "\n--------------------------------------------------------";
         }
         String s1 = "************************************************* \n --------------------------------------------------------\n Playlist Name:" + getName() + "\n Creator Name:" + getCreator() + "\n Genre:" + getGenre() + s2;
         return s1;

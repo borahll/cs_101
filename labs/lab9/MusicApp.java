@@ -55,30 +55,30 @@ public class MusicApp {
                     String name = sc.next();
 
                     System.out.println("Enter song duration in seconds for Song " + (a+1) + ":");
-                    int duration = sc.nextInt();
+                    int duration1 = sc.nextInt();
 
                     System.out.println("Enter the times song has been played for Song " + (a+1) + ":");
                     int times = sc.nextInt();
 
-                    Song aSong = new Song(name, artist, album, duration, times);
+                    Song aSong = new Song(name, artist, album, duration1, times);
                     playlist1.addSong(aSong);
                 }
             }
 
             if (input.equals("2")){
-                System.out.println(playlists.get(counter).toString());
+                System.out.println(playlists.get(counter-1).toString());
             }
 
             if (input.equals("3")){
-                playlists.get(counter).sortByDurationDesc();
-                System.out.println(playlists.get(counter).toString());
+                playlists.get(counter-1).sortByDurationDesc();
+                System.out.println(playlists.get(counter-1).toString());
             }
 
             if (input.equals("4")){
                 System.out.println("Which song do you want to remove? (Remove by index)");
                 byte index = sc.nextByte();
 
-                playlists.get(counter).removeSong(index);
+                playlists.get(counter-1).removeSong(index);
             }
 
             if (input.equals("5")){                 
