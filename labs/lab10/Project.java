@@ -17,7 +17,7 @@ public class Project {
 
     public Project(String aID, double[] aRawArray){
         ID = aID;
-        
+
         if(aRawArray.length <= 6){
             rawScores = aRawArray;
             modifiedScores = Arrays.copyOf(rawScores, rawScores.length);
@@ -26,6 +26,8 @@ public class Project {
             System.out.println("enter a list shorter than 6 elements");
         }
     }
+
+    
 
     public Hackathon getHackathon(){return hackathon;}
 
@@ -67,5 +69,21 @@ public class Project {
         else if(segment.equals("A")){credibility = "Very Good";}
         else if(segment.equals("A+")){credibility = "Perfect";}
     }
-    
+
+    public String toString(int condition){
+        this.calcModifiedScores();
+        this.calcSegment();
+        if(condition == INITIAL){
+            String s1 = this.ID + "     " + this.rawScores[0] + "     " +this.rawScores[1] + "     " +this.rawScores[2] + "     " +this.rawScores[3] + "\n***********************************************************************\n";
+            return s1;
+        }
+        else if(condition == MODIFIED){
+            String s2 = this.ID + "     " + this.modifiedScores[0] + "     " +this.modifiedScores[1] + "     " +this.modifiedScores[2] + "     " +this.modifiedScores [3] + "\n***********************************************************************\n";
+            return s2;
+        }
+        else {
+            String s3 = this.ID + "     " + this.modifiedScores[0] + "     " +this.modifiedScores[1] + "     " +this.modifiedScores[2] + "     " +this.modifiedScores [3] + segment + "\n***********************************************************************\n";
+            return s3;
+        }
+    }
 }
