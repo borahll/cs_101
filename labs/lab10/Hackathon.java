@@ -27,7 +27,7 @@ public class Hackathon {
         String s1 = "";
         String s2 = "Initial Table\n***********************************************************************\nProject ID   Indicator 1   Indicator 2  Indicator 3  Indicator 4\n" ;
         String s3 = "Modified Table\n***********************************************************************\nProject ID   Indicator 1   Indicator 2  Indicator 3  Indicator 4\n" ;
-        String s4 = "Final Table\n***********************************************************************\nProject ID   Indicator 1   Indicator 2  Indicator 3  Indicator 4\n" ;
+        String s4 = "Final Table\n************************************************************************************************************************\nProject ID   Indicator 1   Indicator 2  Indicator 3  Indicator 4  Weighted Mean  Segment  Credibility\n" ;
 
         System.out.println(s2);
         for(byte a = 0; a < projectCount; a++){
@@ -73,9 +73,6 @@ public class Hackathon {
         Project[] projects = {project1, project2, project3, project4, project5,project6};
         Hackathon hackathon = new Hackathon(6, projects);
 
-        // for(byte a = 0; a < projects.length; a++){
-           
-        // }
         System.out.println(hackathon.toString()); 
     }
 }
